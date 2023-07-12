@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
-interface RepoModel {
+export interface RepoModel {
   name: string;
   id: number;
   description: string;
@@ -18,7 +18,6 @@ async function fetchRepos() {
 
 const ReposPage = async () => {
   const repos: RepoModel[] = await fetchRepos();
-  console.log({ repos });
   return (
     <div className="repos-container">
       <h2>Repositories</h2>
