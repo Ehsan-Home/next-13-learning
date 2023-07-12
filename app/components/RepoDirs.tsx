@@ -6,6 +6,7 @@ interface RepoDirModel {
 }
 
 async function fetchContent(name: string) {
+  await new Promise((resolve) => setTimeout(resolve, 4000));
   const res = await fetch(
     `https://api.github.com/repos/Ehsan-Home/${name}/contents`
   );
@@ -15,7 +16,6 @@ async function fetchContent(name: string) {
 
 const RepoDirs = async ({ name }: { name: string }) => {
   const contents: RepoDirModel[] = await fetchContent(name);
-  console.log(`Contents of ${name}:`, contents);
   const dirs = contents.filter((content) => content.type === "dir");
 
   return (
