@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Header from "./components/Header";
 
 const inter = Inter({
   weight: ["400", "700"],
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="container">
-          <h1>This is a header from main layout</h1>
+          <Header />
           {children}
         </main>
       </body>
