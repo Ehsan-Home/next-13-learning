@@ -6,7 +6,6 @@ interface RepoDirModel {
 }
 
 async function fetchContent(name: string) {
-  await new Promise((resolve) => setTimeout(resolve, 4000));
   const res = await fetch(
     `https://api.github.com/repos/Ehsan-Home/${name}/contents`
   );
