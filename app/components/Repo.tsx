@@ -9,7 +9,6 @@ async function fetchRepo(name: string) {
 
 const Repo = async ({ name }: { name: string }) => {
   const repo: RepoModel = await fetchRepo(name);
-  console.log({ repo });
 
   return (
     <>
