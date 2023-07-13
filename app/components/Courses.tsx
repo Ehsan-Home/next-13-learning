@@ -8,15 +8,7 @@ interface CoursesModel {
   level: string;
 }
 
-async function fetchCourses() {
-  const res = await fetch("http://localhost:3000/api/courses");
-  const courses = await res.json();
-  return courses;
-}
-
-const Courses = async () => {
-  const courses: CoursesModel[] = await fetchCourses();
-
+const Courses = ({ courses }: { courses: CoursesModel[] }) => {
   return (
     <div className="courses">
       {courses.map((course) => (
